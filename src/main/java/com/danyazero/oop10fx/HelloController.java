@@ -10,6 +10,10 @@ import models.Result;
 
 public class HelloController {
     @FXML
+    private Label calculatedIntervalValue;
+    @FXML
+    private Label calculatedTimeValue;
+    @FXML
     private TextField intervalsCount;
     @FXML
     private TextField threadsCount;
@@ -18,5 +22,7 @@ public class HelloController {
     public void startCalculationHandler(ActionEvent actionEvent) {
         ICalculator bll = new CalculatorLogic();
         Result result = bll.calculateIntegral(Integer.parseInt(intervalsCount.getText()), Integer.parseInt(threadsCount.getText()));
+        calculatedIntervalValue.setText(String.valueOf(result.getResult()));
+        calculatedTimeValue.setText(String.valueOf(result.getTime()));
     }
 }
