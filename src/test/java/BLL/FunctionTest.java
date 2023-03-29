@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FunctionTest {
 
     Function func;
-    double EXP = 0.0001;
+    double EPS = 1e-6;
     @BeforeEach
     void setUp() {
         double a = 0;
@@ -21,6 +21,6 @@ class FunctionTest {
     void calculateTest() {
         double expected = 0.866025;
 
-        assertEquals(expected, func.calculate(), EXP);
+        assertEquals(expected, func.calculate(), EPS);
     }
 }
