@@ -22,7 +22,7 @@ public class HelloController {
     public void startCalculationHandler(ActionEvent actionEvent) {
         ICalculator bll = new CalculatorLogic();
         Result result = bll.calculateIntegral(Integer.parseInt(intervalsCount.getText()), Integer.parseInt(threadsCount.getText()));
-        calculatedIntervalValue.setText(String.valueOf(result.getResult()));
-        calculatedTimeValue.setText(String.valueOf(result.getTime()));
+        calculatedIntervalValue.setText(String.valueOf(result.result()));
+        calculatedTimeValue.setText(String.valueOf(result.time()));
     }
 }

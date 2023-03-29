@@ -20,8 +20,8 @@ public class Function {
     }
 
     public double calculate() {
-        double division = (f.applyAsDouble(start+0*step) + f.applyAsDouble(start+nSteps*step)/2)* step;
-        double sum = IntStream.range(0, nSteps).mapToDouble(i -> start + i * step).map(f).map(y -> y * step).sum();
+        double division = (f.applyAsDouble(start) + f.applyAsDouble(end)/2) * step;
+        double sum = IntStream.range(1, nSteps).mapToDouble(i -> start + i * step).map(f).map(y -> y * step).sum();
 
         return division + sum;
     }
